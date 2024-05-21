@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-container {
+            background-color: #038554;
+            padding: 2rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            color: #fff;
+        }
+
+        .image-container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 0.5rem 0 0 0.5rem;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Ajustes */
+        .green-container {
+            background-color: #038554;
+            width: 50%; /* Metade da tela */
+            height: 100vh; /* Altura total da tela */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            color: #000; /* Alterando a cor do texto digitado para preto */
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-teal-600 px-5 py-6 flex items-center justify-between">
+        <div class="logo-container">
+            <img loading="lazy" src="../img/LOGO.png" alt="Logotipo" class="h-20 mr-4">
+            
+        </div>
+    </header>
+
+    <div class="flex">
+        <div class="image-container">
+            <h2 class="text-xl font-semibold mb-4">Encontre o melhor lugar para suas reuniões!</h2>
+            <img src="../img/vetorreuniao.png" alt="Vetor de Reunião">
+        </div>
+        <div class="green-container">
+            <div class="login-container">
+                <h1 class="login-title text-5xl font-bold mb-10">LOGIN</h1>
+                <form onsubmit="return handleLogin()">
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-900" placeholder="Seu email" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="block text-gray-300 text-sm font-bold mb-2">Senha</label>
+                        <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" placeholder="Sua senha" required>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button type="submit" class="bg-green-600 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-gray-600">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if (email === "clara@123" && password === "senha") {
+                // Redirecionar para a página de destino após o login bem-sucedido
+                window.location.href = "index.html"; // Ajuste o caminho conforme necessário
+                return false;
+            } else {
+                alert("Credenciais inválidas. Por favor, tente novamente.");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>
